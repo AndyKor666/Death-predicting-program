@@ -28,3 +28,6 @@ _print(">> ERR . . . Name cannot be empty.")    slow
 _print("-------------------------------------------")    name
  = input(">> Input your name: ").strip()
 
+
+
+birth_input = input(">> Input birth date (MM.DD.YYYY): ").strip()       
