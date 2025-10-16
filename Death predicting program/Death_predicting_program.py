@@ -9,3 +9,17 @@ def slow_print(text, delay=0.03):
             time.sleep(delay)
         print()
         time.sleep(delay*10)
+
+def is_valid_date_parts(mm,dd,yyyy):
+    days_in_month = {
+        1:31, 2:28, 3:31, 4:30, 5:31, 6:30,
+        7:31, 8:31, 9:30, 10:31, 11:30, 12:31
+    }
+    if mm < 1 or mm > 12:
+        return False
+    max_day = days_in_month.get(mm, 31)
+    if dd < 1 or dd > max_day:
+        return False
+    if yyyy < 1900 or yyyy > date.today().year:
+        return False
+    return True
