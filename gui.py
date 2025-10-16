@@ -15,4 +15,16 @@ f.write(result + "\n")
 f.write("------------------------------------------\n")        
 f.write(f">> Record created at {datetime.now().strftime('%H:%M:%S %d.%m.%Y')}\n")        
 f.write("------------------------------------------\n")        
-f.write("==========================================\n")    slow
+f.write("==========================================\n")
+
+
+
+
+_print("=========== FUTURE DEATH SYSTEM ===========")    slow
+_print("-------------------------------------------")    name
+ = input(">> Input your name: ").strip()    slow
+_print("-------------------------------------------")    slow
+_print(">> ERR . . . Name cannot be empty.")    slow
+_print("-------------------------------------------")    name
+ = input(">> Input your name: ").strip()
+
