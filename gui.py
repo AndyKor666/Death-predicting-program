@@ -1,0 +1,5 @@
+return ">> You will die today . . ."
+return ">> You will die tomorrow . . ."
+return ">> You will die the day after tomorrow . . ."
+return ">> ERR . . . Unexpected error in prediction.\n------------------------------------------"
+return f">> Your death date: {death.strftime('%m.%d.%Y')}"   
