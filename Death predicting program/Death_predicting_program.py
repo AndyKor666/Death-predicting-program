@@ -61,3 +61,20 @@ def save_record(name, birth_str, result):
     filename = f"DeathRecord_{ts}.txt"
     with open(filename, "a") as f:
     return filename
+
+def main():
+    while not name:
+    today = date.today()
+    while True:
+        bd = parse_birth_date(birth_input)
+        if bd is None:
+            continue
+        if bd > today:
+            continue
+        break
+    time.sleep(1.5)
+    result = predict_death(bd)
+    slow_print(result)
+    saved = save_record(name, birth_input, result)
+if __name__ == "__main__":
+    main()
