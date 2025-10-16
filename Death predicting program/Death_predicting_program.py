@@ -23,3 +23,18 @@ def is_valid_date_parts(mm,dd,yyyy):
     if yyyy < 1900 or yyyy > date.today().year:
         return False
     return True
+
+def parse_birth_date(date_str):
+    parts = date_str.split('.')
+    if len(parts) != 3:
+        return None
+    try:
+        mm, dd, yyyy = map(int, parts)
+    except ValueError:
+        return None
+    if not is_valid_date_parts(mm, dd, yyyy):
+        return None
+    try:
+        return date(yyyy, mm, dd)
+    except ValueError:
+        return None
