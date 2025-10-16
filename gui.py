@@ -30,4 +30,12 @@ _print("-------------------------------------------")    name
 
 
 
-birth_input = input(">> Input birth date (MM.DD.YYYY): ").strip()       
+birth_input = input(">> Input birth date (MM.DD.YYYY): ").strip()
+
+
+
+slow_print("-------------------------------------------")
+slow_print(">> ERR . . . Invalid date or wrong format.\n>> Example: 4.13.1997 . . .")
+slow_print("------------------------------------------")
+slow_print(">> ERR . . . Birth date cannot be in the future.")
+slow_print("------------------------------------------")    slow
