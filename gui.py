@@ -1,3 +1,9 @@
+return ">> You will die today . . ."        
+return ">> You will die tomorrow . . ."        
+return ">> You will die the day after tomorrow . . ."        
+return ">> ERR . . . Unexpected error in prediction.\n------------------------------------------"        
+return f">> Your death date: {death.strftime('%m.%d.%Y')}"        
+
 
 
 f.write("============== FUTURE DEATH ==============\n")        
@@ -9,4 +15,4 @@ f.write(result + "\n")
 f.write("------------------------------------------\n")        
 f.write(f">> Record created at {datetime.now().strftime('%H:%M:%S %d.%m.%Y')}\n")        
 f.write("------------------------------------------\n")        
-f.write("==========================================\n")   
+f.write("==========================================\n")    slow
