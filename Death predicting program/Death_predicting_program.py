@@ -55,3 +55,9 @@ def predict_death(birth_date):
             corrected = date(target_year, 2, 28)
             death = corrected + timedelta(days=extra_days)
         else:
+
+def save_record(name, birth_str, result):
+    ts=datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    filename = f"DeathRecord_{ts}.txt"
+    with open(filename, "a") as f:
+    return filename
