@@ -20,13 +20,13 @@ f.write("==========================================\n")
 
 
 
-_print("=========== FUTURE DEATH SYSTEM ===========")    slow
-_print("-------------------------------------------")    name
- = input(">> Input your name: ").strip()    slow
-_print("-------------------------------------------")    slow
-_print(">> ERR . . . Name cannot be empty.")    slow
-_print("-------------------------------------------")    name
- = input(">> Input your name: ").strip()
+_print("=========== FUTURE DEATH SYSTEM ===========")
+slow_print("-------------------------------------------")
+name = input(">> Input your name: ").strip()
+slow_print("-------------------------------------------")
+slow_print(">> ERR . . . Name cannot be empty.")
+slow_print("-------------------------------------------")
+name = input(">> Input your name: ").strip()
 
 
 
@@ -38,4 +38,18 @@ slow_print("-------------------------------------------")
 slow_print(">> ERR . . . Invalid date or wrong format.\n>> Example: 4.13.1997 . . .")
 slow_print("------------------------------------------")
 slow_print(">> ERR . . . Birth date cannot be in the future.")
-slow_print("------------------------------------------")    slow
+slow_print("------------------------------------------")
+
+
+
+
+slow_print("-------------------------------------------")
+slow_print(">> Processing . . .")
+slow_print("-------------------------------------------")
+slow_print(f">> Name: {name}")
+slow_print("-------------------------------------------")
+slow_print(f">> Record saved to '{saved}'")
+slow_print("-------------------------------------------")
+slow_print("             --- DEAD END ---              ")
+slow_print("-------------------------------------------")
+slow_print("===========================================")
