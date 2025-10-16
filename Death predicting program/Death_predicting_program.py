@@ -38,3 +38,20 @@ def parse_birth_date(date_str):
         return date(yyyy, mm, dd)
     except ValueError:
         return None
+
+def predict_death(birth_date):
+    fate_roll = random.randint(1,10)
+    if fate_roll==1:
+    elif fate_roll==2:
+    elif fate_roll==3:
+
+    years_to_add=random.randint(18, 80)
+    extra_days=random.randint(0, 364)
+    target_year=birth_date.year+years_to_add
+    try:
+        death=birth_date.replace(year=target_year)+timedelta(days=extra_days)
+    except ValueError:
+        if birth_date.month == 2 and birth_date.day == 29:
+            corrected = date(target_year, 2, 28)
+            death = corrected + timedelta(days=extra_days)
+        else:
