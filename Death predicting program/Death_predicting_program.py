@@ -39,14 +39,11 @@ def parse_birth_date(date_str):
     except ValueError:
         return None
 
-def predict_death(name, birth_date):
+def predict_death(birth_date):
     fate_roll = random.randint(1,10)
     if fate_roll==1:
-        return ">> You will die today . . ."
     elif fate_roll==2:
-        return ">> You will die tomorrow . . ."
     elif fate_roll==3:
-        return ">> You will die the day after tomorrow . . ."
 
     years_to_add=random.randint(18, 80)
     extra_days=random.randint(0, 364)
@@ -58,61 +55,26 @@ def predict_death(name, birth_date):
             corrected = date(target_year, 2, 28)
             death = corrected + timedelta(days=extra_days)
         else:
-            return ">> ERR . . . Unexpected error in prediction.\n------------------------------------------"
-
-    return f">> {name}'s death date: {death.strftime('%m.%d.%Y')}"
 
 def save_record(name, birth_str, result):
-    ts = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    ts=datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"DeathRecord_{ts}.txt"
     with open(filename, "a") as f:
-        f.write("============== FUTURE DEATH ==============\n")
-        f.write("------------------------------------------\n")
-        f.write(f">> Name: {name}\n")
-        f.write(f">> Birth: {birth_str}\n")
-        f.write("------------------------------------------\n")
-        f.write(result + "\n")
-        f.write("------------------------------------------\n")
-        f.write(f">> Record created at {datetime.now().strftime('%H:%M:%S %d.%m.%Y')}\n")
-        f.write("------------------------------------------\n")
-        f.write("==========================================\n")
     return filename
 
 def main():
-    slow_print("=========== FUTURE DEATH SYSTEM ===========")
-    slow_print("-------------------------------------------")
-    name = input(">> Input your name: ").strip()
     while not name:
-        slow_print("-------------------------------------------")
-        slow_print(">> ERR . . . Name cannot be empty.")
-        slow_print("-------------------------------------------")
-        name = input(">> Input your name: ").strip()
     today = date.today()
     while True:
-        birth_input = input(">> Input birth date (MM.DD.YYYY): ").strip()
         bd = parse_birth_date(birth_input)
         if bd is None:
-            slow_print("-------------------------------------------")
-            slow_print(">> ERR . . . Invalid date or wrong format.\n>> Example: 4.13.1997 . . .")
-            slow_print("------------------------------------------")
             continue
         if bd > today:
-            slow_print(">> ERR . . . Birth date cannot be in the future.")
-            slow_print("------------------------------------------")
             continue
         break
-    slow_print("-------------------------------------------")
-    slow_print(">> Processing . . .")
     time.sleep(1.5)
-    slow_print("-------------------------------------------")
-    result = predict_death(name, bd)
+    result = predict_death(bd)
     slow_print(result)
     saved = save_record(name, birth_input, result)
-    slow_print("-------------------------------------------")
-    slow_print(f">> Record saved to '{saved}'")
-    slow_print("-------------------------------------------")
-    slow_print("             --- DEAD END ---              ")
-    slow_print("-------------------------------------------")
-    slow_print("===========================================")
 if __name__ == "__main__":
     main()
